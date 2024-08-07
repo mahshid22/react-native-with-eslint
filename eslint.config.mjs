@@ -17,6 +17,15 @@ export default [
   {
     rules: {
       "no-console": "error",
+      "react/prop-types": "error",
+      "react/react-in-jsx-scope": "error",
+      "@typescript-eslint/no-unused-vars": "error",
+      "@typescript-eslint/no-explicit-any": "error",
+      "prefer-const": "error",
+      "@typescript-eslint/no-var-requires": "off",
+      "no-console": "error",
+      "no-alert": "error",
+      "no-debugger": "error"
     }
   },
   {languageOptions: {globals: globals.browser}},
