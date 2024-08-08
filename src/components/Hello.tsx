@@ -7,9 +7,13 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import { Icon } from './icon/components';
 function Hello() {
   return (
+    <View>
       <Text style={styles.sectionTitle}>App.sdfsdfsdftsx</Text>
+      <Icon name="home" />
+    </View>
   );
 }
 export default Hello;
