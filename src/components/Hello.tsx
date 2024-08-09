@@ -12,7 +12,7 @@ function Hello() {
   return (
     <View>
       <Text style={styles.sectionTitle}>App.sdfsdfsdftsx</Text>
-      <Icon name="home" />
+      <Icon name="home" size="lg" color="red" onPress={()=>console.log('hellooo')}/>
     </View>
   );
 }

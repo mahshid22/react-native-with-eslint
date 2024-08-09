@@ -1,10 +1,6 @@
-import icoMoonConfig from '../../../selection.json';
-import {useTheme} from '../../theme';
-import {generateBasedOnPaletteColor as formatColor} from '../../utils/generatePaletteColor';
-import {IconProps, IconSizes} from './types';
-import {Pressable, View} from 'react-native';
-import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
-import IcoMoon from "../../../assets/CustomIcon"
+import { IconProps, IconSizes } from './types';
+import { Pressable, View } from 'react-native';
+import IcoMoon from '../../../assets/CustomIcon';
 export const ISize: Record<IconSizes, number> = {
   xs: 9,
   sm: 15,
@@ -14,24 +10,20 @@ export const ISize: Record<IconSizes, number> = {
   xxl: 57,
 };
 
-// const IcoMoon = createIconSetFromIcoMoon(icoMoonConfig);
-export const Icon = (props: any) => {
-  // const {theme} = useTheme();
+export const Icon = (props: IconProps) => {
   const {
     color,
     name,
-    size,
+    size = 'md',
     onPress,
     onLongPress,
     onPressIn,
     onPressOut,
-    Component = onPress || onLongPress || onPressIn || onPressOut
-      ? Pressable
-      : View,
+    Component = onPress || onLongPress || onPressIn || onPressOut ? Pressable : View,
   } = props;
 
-  const iconColor = color || 'black'
-  // let iconSize = typeof size === 'number' ? size : ISize[size!];
+  const iconColor = color || 'black';
+  let iconSize = typeof size === 'number' ? size : ISize[size!];
   return (
     <Component
       {...{
@@ -41,12 +33,9 @@ export const Icon = (props: any) => {
         onPressOut,
         ...props,
       }}
-      accessibilityRole={
-        onPress || onLongPress || onPressIn || onPressOut ? 'button' : 'none'
-      }
+      accessibilityRole={onPress || onLongPress || onPressIn || onPressOut ? 'button' : 'none'}
       accessibilityLabel={name}>
-      <IcoMoon name={name!}  color={iconColor} />
+      <IcoMoon name={name!} color={iconColor} size={iconSize} />
     </Component>
   );
 };
-
