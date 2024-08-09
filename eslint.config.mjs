@@ -1,6 +1,7 @@
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import pluginReact from 'eslint-plugin-react';
+// import unicorn from "eslint-plugin-unicorn";
 
 export default [
   {
@@ -20,10 +21,22 @@ export default [
       globals: globals.node,
     },
   },
+  // { plugins: {unicorn}},
+  // {
+   
+  //   rules: {
+  //     "unicorn/filename-case": [
+  //       "error",
+  //       {
+  //         "case": "pascalCase"
+  //       }
+  //     ]
+  //   }
+  // },
   {
     linterOptions: {
       noInlineConfig: true,
-      reportUnusedDisableDirectives: "error"
+      reportUnusedDisableDirectives: 'error',
     },
     rules: {
       'no-console': 'error',
@@ -63,7 +76,7 @@ export default [
       'react/no-typos': 'warn',
       'react/display-name': 'warn',
       'react/self-closing-comp': 'warn',
-      'react/jsx-sort-props': 'warn',
+      // 'react/jsx-sort-props': 'warn',
       'react/react-in-jsx-scope': 'off',
       'react/jsx-one-expression-per-line': 'off',
       'react/prop-types': 'off',
@@ -72,7 +85,7 @@ export default [
         'warn',
         {
           selector: 'default',
-          format: ['camelCase'],
+          format: ['PascalCase', 'camelCase'],
           leadingUnderscore: 'allow',
         },
         {
@@ -87,6 +100,14 @@ export default [
           leadingUnderscore: 'allow',
         },
         {
+          selector: 'interface',
+          format: ['PascalCase'],
+          custom: {
+            regex: '^I[A-Z]',
+            match: false,
+          },
+        },
+        {
           selector: 'property',
           format: null,
           leadingUnderscore: 'allow',
@@ -97,7 +118,7 @@ export default [
         },
       ],
 
-      'arrow-body-style': 'warn',
+      // 'arrow-body-style': ['error','as-needed',{ "requireReturnForObjectLiteral": true }],
       'prefer-arrow-callback': [
         'warn',
         {

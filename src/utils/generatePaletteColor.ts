@@ -6,5 +6,5 @@ export const generateBasedOnPaletteColor = (color: Colors, theme: Theme): string
   const colorSplitted: string[] = color.replace(/\-/,'&').split('&');
   const Palettes = colorSplitted[0] as Pallette;
   const Shades = colorSplitted[1] as Shades;
-  return (theme as any).color[Palettes][Shades] ;
+  return (theme).color[Palettes][Shades] ;
 };

@@ -1,3 +1,4 @@
+import React from 'react';
 import { IconProps, IconSizes } from './types';
 import { Pressable, View } from 'react-native';
 import IcoMoon from '../../../assets/CustomIcon';
@@ -23,7 +24,7 @@ export const Icon = (props: IconProps) => {
   } = props;
 
   const iconColor = color || 'black';
-  let iconSize = typeof size === 'number' ? size : ISize[size!];
+  const iconSize = typeof size === 'number' ? size : ISize[size!];
   return (
     <Component
       {...{

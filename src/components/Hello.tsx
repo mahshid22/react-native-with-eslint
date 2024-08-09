@@ -1,21 +1,14 @@
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
 import { Icon } from './icon/components';
-function Hello() {
+const Hello = () => {
   return (
     <View>
-      <Text style={styles.sectionTitle}>App.sdfsdfsdftsx</Text>
-      <Icon name="home" size="lg" color="red" onPress={()=>console.log('hellooo')}/>
+      <Text style={styles.sectionTitle}>App.sdfsdfsdftsxcszdfd</Text>
+      <Icon name="home" size="lg" color="red" />
     </View>
   );
-}
+};
 export default Hello;
 const styles = StyleSheet.create({
   sectionContainer: {
